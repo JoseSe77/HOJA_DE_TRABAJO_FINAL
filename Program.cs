@@ -85,6 +85,44 @@ namespace HOJA_DE_TRABAJO_FINAL
                         Console.Clear();
                         Console.WriteLine("Trabajo Supervisado - José Pablo Sosa España - 1057623");
 
+                        int filas, columnas = 0;
+                        
+                        
+                        Console.WriteLine("\nIngrese la cantidad de filas para la matriz: ");
+                        filas = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("\nIngrese la cantidad de columnas para la matriz: ");
+                        columnas = Convert.ToInt32(Console.ReadLine());
+
+                        int[,] matriz = new int[filas, columnas];
+                        int cont2 = 0;
+                        int cont3 = 0;
+
+                        for (int i = 0; i < columnas; i++)
+                        {
+                            cont2++;
+                            matriz[0, i] = cont2;
+                        }
+
+                        for (int cont = 1; cont < filas; cont++)
+                        {
+                            for (int i = 0; i < columnas; i++)
+                            { 
+                                matriz[cont, i] = matriz[0, i] + matriz[cont3, i];
+                            }
+                            cont3++;
+                        }
+
+                        Console.Clear();
+                        Console.WriteLine("Trabajo Supervisado - José Pablo Sosa España - 1057623\n");
+                        for (int i = 0; i < filas; i++)
+                        {
+                            for (int j = 0; j < columnas; j++)
+                            {
+                                Console.Write(matriz[i, j] + "   |   ");
+                            }
+                            Console.WriteLine();
+                        }
 
 
                         Console.ReadKey();
